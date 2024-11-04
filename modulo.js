@@ -97,6 +97,7 @@ function pedirAlta()
                     exito();
                 }else
                 {
+                    console.log(`Error : ${respuesta.status}`);
                     fracaso();
                 }
             } catch (e)
@@ -129,29 +130,15 @@ function pedirModificar()
     let e = crearVehiculo();
     if (e != "error")
     {
-        let promesa = new Promise(async (exito, fracaso)=>{
-            try {
-                let respuesta = await fetch("https://examenesutn.vercel.app/api/VehiculoAutoCamion", {
-                    method: 'PUT',
-                    mode: 'cors',
-                    headers: {
-                    'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(e.getAll())
-                    })
-        
-                if (respuesta.ok)
-                {
-                    modoAceptar = "modificar";
-                    exito();
-                }else
-                {
-                    fracaso();       
-                }
-            } catch (e)
-            {
-                console.log(e);
-            }
+        fetch('https://examenesutn.vercel.app/api/VehiculoAutoCamion')
+        .then(response => {
+        if (response.ok)
+        {
+            console.log('Éxito');
+        } else
+        {
+            console.log(`Error : ${response.status}`);
+        }
         })
         .then(modificar)
         .catch(mostrarAlerta)
@@ -188,6 +175,7 @@ function pedirEliminar(id)
                 exito();
             }else
             {
+                console.log(`Error : ${respuesta.status}`);
                 fracaso();       
             }
         } catch (e)
