@@ -1,0 +1,87 @@
+#vertical
+{
+    position: relative;
+    width: 70%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1;
+}
+
+#horizontal
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+}
+
+#tablaVehiculos, th, td
+{
+    border: solid;
+    margin: auto;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td
+{
+    margin: auto;
+}
+
+#errorScreen
+{
+    position:fixed;
+    display:block;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+}
+
+#spinner
+{
+    position:fixed;
+    display:block;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color:rgba(51, 49, 49, 0.26);
+}
+
+.spinner
+{
+    position: relative;
+    left: 50%;
+    top: 50%;
+    z-index: 2;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid rgb(65, 116, 224);
+    border-bottom: 16px solid rgb(65, 116, 224);
+    width: 120px;
+    height: 120px;
+    margin: -76px 0 0 -76px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+  
+@-webkit-keyframes spin
+{
+0% { -webkit-transform: rotate(0deg); }
+100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin
+{
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}

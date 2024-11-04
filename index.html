@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Segundo Parcial</title>
+        <script type="module" src="./modulo.js"></script>
+        <link rel="stylesheet" href="./styleSheet.css">
+    </head>
+    <body>
+        
+        <div id="spinner">
+            <div class="spinner"></div>
+        </div>
+
+        <div id="errorScreen" style="display: none;">
+            <h1 style="color: red;">ERROR</h1>
+        </div>
+
+        <div id="horizontal">
+            <div id="vertical">
+                
+                <div id="datos" style="display: none;">
+                    <form id=formDatos>
+                        <h1>Form Datos</h1><br>
+                        <div id="divTabla">
+                            <table id="tablaVehiculos"></table>
+                        </div>
+                        <input type="button" value="Agregar Elemento" id="btn_agregar">                        
+                    </form>
+                </div>
+
+                <div id="abm" style="display: none;">
+                    <h1>Formulario ABM</h1>
+                    <br>
+                    <p id="advertenciaInvalido" style="display: none;">Datos Inválidos</p>
+                    <label for="txt_id">Id:</label>
+                    <input type="text" id="txt_id" disabled>
+                    <br>
+                    <label for="txt_anoFabricacion">Año de Fabricación:</label>
+                    <input type="text" id="txt_anoFabricacion">
+                    <br>
+                    <label for="txt_modelo">Modelo:</label>
+                    <input type="text" id="txt_modelo">
+                    <br>
+                    <label for="txt_velMax">Velocidad Máxima:</label>
+                    <input type="text" id="txt_velMax">
+                    <br>
+                    <label for="select_tipo">Tipo:</label>
+                    <select id="select_tipo">
+                        <option value="camion" selected>Camión</option>
+                        <option value="auto">Auto</option>
+                    </select>
+                    <br>
+                    <div id="formCamion">
+                        <label for="txt_carga">Carga:</label>
+                        <input type="text" id="txt_carga">
+                        <br>
+                        <label for="txt_autonomia">Autonomía:</label>
+                        <input type="text" id="txt_autonomia">
+                    </div>
+
+                    <div id="formAuto" style="display:none;">
+                        <label for="txt_cantidadPuertas">Cantidad de Puertas:</label>
+                        <input type="text" id="txt_cantidadPuertas">
+                        <br>
+                        <label for="txt_asientos">Asientos:</label>
+                        <input type="text" id="txt_asientos">
+                    </div>
+                    <br>
+                    <input type="button" id="btn_aceptar" value="Aceptar">
+                    <input type="button" id="btn_cancelar" value="Cancelar">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
